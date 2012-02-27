@@ -1,8 +1,8 @@
 .border-radius(@radius: 4px) {
-    border-radius: @radius;
     -moz-border-radius: @radius;
     -webkit-border-radius: @radius;
     -o-border-radius: @radius;
+    border-radius: @radius;
 }
 
 .gradient(@from:#fff, @to:#aaa) {
@@ -11,27 +11,35 @@
     background-image: -webkit-linear-gradient(@from, @to);
     background-image: -o-linear-gradient(top, @from, @to);
     background-image: -ms-linear-gradient(top, @from, @to);
+    background-image: linear-gradient(@from, @to);
 }
 .shadow(@attr: 1px 1px 0 rgba(0,0,0,.1)) {
-    box-shadow: @attr;
     -moz-box-shadow: @attr;
     -webkit-box-shadow: @attr;
+    box-shadow: @attr;
 }
 .background-clip(@attr) {
-    background-clip: @attr;
     -moz-background-clip: @attr;
     -webkit-background-clip: @attr;
+    background-clip: @attr;
 }
 
 .transition(@speed: 300, @property: all, @easing: linear) {
-    transition: @property @speed @easing;
     -moz-transition: @property @speed @easing;
     -webkit-transition: @property @speed @easing;
     -o-transition: @property @speed @easing;
+    transition: @property @speed @easing;
 }
 
 .transform(@type, @value) {
-    transform: (e("@{type}(@{value})", @type, @value));
     -moz-transform: (e("@{type}(@{value})", @type, @value));
     -webkit-transform: (e("@{type}(@{value})", @type, @value));
+    transform: (e("@{type}(@{value})", @type, @value));
+}
+
+.box-sizing(@val) {
+    -moz-box-sizing: @val;
+    -webkit-box-sizing: @val;
+    -ms-box-sizing: @val;
+    box-sizing: @val;
 }
